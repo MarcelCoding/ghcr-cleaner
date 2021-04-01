@@ -1,0 +1,22 @@
+cargo-features = ["strip"]
+
+[package]
+name = "ghcr-cleaner"
+version = "0.1.0"
+authors = ["Marcel <34819524+MarcelCoding@users.noreply.github.com>"]
+edition = "2018"
+
+[profile.release]
+strip = "symbols"
+lto = true
+codegen-units = 1
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = { version = "0.11", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1.4", features = ["full"] }
+simple_logger = "1.11"
+futures = "0.3"
+log = "0.4"
