@@ -26,7 +26,7 @@ jobs:
             target
           key: ${{ runner.os }}-cargo-stable-${{ github.job }}-${{ hashFiles('**/Cargo.lock') }}
 
-      - uses: actions-rs/clippy-check@v1
+      - uses: actions-rs/clippy-check@v1.0.7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           args: --all-features
