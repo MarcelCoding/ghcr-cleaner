@@ -55,7 +55,7 @@ jobs:
             target
           key: ${{ runner.os }}-cargo-${{ matrix.toolchain }}-${{ github.job }}-${{ hashFiles('**/Cargo.lock') }}
 
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@v1.0.3
         with:
           command: test
           args: --all-features
@@ -84,7 +84,7 @@ jobs:
             target
           key: ${{ runner.os }}-cargo-stable-${{ github.job }}-${{ hashFiles('**/Cargo.lock') }}
 
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@v1.0.3
         with:
           command: build
           args: --release --all-features
