@@ -53,10 +53,10 @@ async fn main() -> reqwest::Result<()> {
     }
 
     println!();
-    let yes_no = ask("Do you want to delete the displayed versions? [Y/N]: ").unwrap();
+    let yes_no = ask("Do you want to delete the displayed versions? [Y/n]: ").unwrap();
     println!();
 
-    if !yes_no.eq_ignore_ascii_case("y") {
+    if yes_no.is_empty() || !yes_no.eq_ignore_ascii_case("y") {
         println!("Nothing will be deleted.");
         return Ok(());
     }
