@@ -2,6 +2,7 @@ use std::env::args;
 use std::io::{self, stdin, stdout, Write};
 
 use log::LevelFilter::Info;
+use rpassword::read_password_from_tty;
 use simple_logger::SimpleLogger;
 
 use crate::github::{GitHub, Image, Version};
@@ -22,7 +23,7 @@ async fn main() -> reqwest::Result<()> {
     let username = &args[1];
     let image = &args[2];
 
-    let token = ask("Please type in your token: ").unwrap();
+    let token = read_password_from_tty(Some("Please type in your token: ")).unwrap();
 
     let github = GitHub::new(username.to_string(), token.to_string())?;
     let image = Image::new(image.to_string()).expect("Wrong image format!");
