@@ -19,4 +19,4 @@ tokio = { version = "1.17", features = ["full"] }
 simple_logger = "1.16.0"
 futures = "0.3"
 log = "0.4"
-rpassword = "5.0"
+rpassword = "7.0"
