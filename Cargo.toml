@@ -15,7 +15,7 @@ strip = true  # Automatically strip symbols from the binary.
 [dependencies]
 reqwest = { version = "0.11", features = ["json"] }
 serde = { version = "1.0", features = ["derive"] }
-tokio = { version = "1.17", features = ["full"] }
+tokio = { version = "1.19", features = ["full"] }
 simple_logger = "1.16.0"
 futures = "0.3"
 log = "0.4"
